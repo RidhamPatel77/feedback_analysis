@@ -14,7 +14,12 @@ def sentiment_analysis(input_text):
     
     # Predict sentiment
     prediction = SVM.predict(input_vector)
-    return f"Sentiment: {prediction[0]}"
+    if prediction[0]==0:
+        return f"The feedback was negative"
+    elif prediction[0]==1:
+        return f"The feedback was neutral"
+    else prediction[0]==2:
+        return f"The feedback was positive"
 
 # Gradio interface
 interface = gr.Interface(
