@@ -18,8 +18,10 @@ def sentiment_analysis(input_text):
         return f"The feedback was negative"
     elif prediction[0]==1:
         return f"The feedback was neutral"
-    else prediction[0]==2:
+    elif prediction[0]==2:
         return f"The feedback was positive"
+    else:
+        return f"Unknown Error"
 
 # Gradio interface
 interface = gr.Interface(
